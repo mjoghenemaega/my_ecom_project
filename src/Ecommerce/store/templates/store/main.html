@@ -8,6 +8,29 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+
+
+    <script>
+    var user = '{{request.user}}';
+     function getToken(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+const csrftoken = getToken('csrftoken');
+    </script>
+
+
 	
 </head>
 <body>
@@ -45,12 +68,69 @@
 
 
 		{% endblock content%}
-	</div>
 
+	</div>
+<!-- start footer-->
+<div class='container-fluid'>
+    <div class="card">
+        <div class="heading text-center">
+            <div class="head1">Just Scratching the Surface</div>
+            <p class="bdr"></p>
+        </div>
+        <div class="card-body">
+            <div class="row m-0 pt-5">
+                <div class="card col-12 col-md-3">
+                    <div class="card-content"> <i class="fas fa-hand-holding-usd fa-3x"></i>
+                        <div class="card-title"> RECHARGE REPEAT CUSTOMER </div>
+                        <p><small>Save customers' cards for future phone orders</small></p>
+                        <div class="learn-more">
+                            <p> <small> LEARN MORE <label><i class="fas fa-angle-right"></i></label> </small> </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card col-12 col-md-3">
+                    <div class="card-content"> <i class="far fa-handshake fa-3x"></i>
+                        <div class="card-title"> ACCEPT ELECTRONIC CHECK </div>
+                        <p><small>Save customers' cards for future phone orders</small></p>
+                        <div class="learn-more">
+                            <p> <small> LEARN MORE <label><i class="fas fa-angle-right"></i></label> </small> </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card col-12 col-md-3">
+                    <div class="card-content"> <i class="fas fa-mobile-alt fa-3x"></i>
+                        <div class="card-title"> STREAMLINE PHONE PAYMENTS </div>
+                        <p><small>Save customers' cards for future phone orders</small></p>
+                        <div class="learn-more">
+                            <p> <small> LEARN MORE <label><i class="fas fa-angle-right"></i></label> </small> </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card col-12 col-md-3">
+                    <div class="card-content"> <i class="fas fa-user-secret fa-3x"></i>
+                        <div class="card-title"> STAY<br /> SECURE </div>
+                        <p><small>Save customers' cards for future phone orders</small></p>
+                        <div class="learn-more">
+                            <p> <small> LEARN MORE <label><i class="fas fa-angle-right"></i></label> </small> </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer row m-0">
+            <p> <label> <i class="fas fa-phone fa-rotate-90 text-primary"></i> </label> 800-601-0230</p>
+            <div>
+                <p> <small class="follow-text">FOLLOW US ON SOCIAL MEDIA</small> <label class="footer-right"> <i class="fab fa-instagram"></i> <i class="fab fa-facebook-square"></i> <i class="fab fa-linkedin"></i> <i class="fab fa-twitter-square"></i> </label> </p>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="{% static 'js/cart.js' %}"></script>
 
 </body>
 </html>
