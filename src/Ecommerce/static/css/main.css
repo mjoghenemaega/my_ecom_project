@@ -1,3 +1,5 @@
+/*import google fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Nerko+One&family=Sansita+Swashed:wght@400;500&display=swap');
 body{
 	background-color: #808080;
 }
@@ -103,7 +105,7 @@ h1,h2,h3,h4,h5,h6{
     background-color: #28323C;
     color: white;
     margin-top: 50px;
-    border: none
+    border: none;
 }
 
 .head1 {
@@ -115,7 +117,7 @@ h1,h2,h3,h4,h5,h6{
     border-bottom: 1.5px solid #FFB74D;
     width: 65px;
     margin-right: auto;
-    margin-left: auto
+    margin-left: auto;
 }
 
 .card-footer {
@@ -126,7 +128,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .footer-right>i {
-    margin-left: 15px
+    margin-left: 15px;
 }
 
 .fa-hand-holding-usd {
@@ -173,6 +175,25 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .follow-text {
-    color: #9E9E9E
+    color: #9E9E9E;
 }
 	
+/* header*/
+header{
+	background-color: black;
+}
+header .site-title{
+	font-family: sans-serif;
+}
+.container .dropdown-toggle,
+.container .dropdown-item{
+font-size: 0.7em;
+}
+
+.navbar-nav .nav-link{
+	font-size: 0.9em;
+	color: lightgrey;
+}
+.navbar-nav .nav-item .nav-link{
+	padding: 0 1.3em;
+}

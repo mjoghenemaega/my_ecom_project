@@ -10,6 +10,9 @@
 
     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
 
+    <!--Font Awesome CDN-->
+    <script src="https://kit.fontawesome.com/836b854fc7.js" crossorigin="anonymous"></script>
+
   <script>
     var user = '{{request.user}}';
 
@@ -57,12 +60,36 @@ console.log("cart:",cart)
   </script>
 </head>
 <body>
+<!--header -->
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-sm-12 col-12">
+        <div class="btn-group">
+          <button class="btn border dropdown-toggle my-md-4 my-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #fff;">NGN</button>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item">USD</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-12 text-center">
+        <h2 class="my-md-3 site-title" style="color: #fff; font-family: 'Nerko One',cursive; ">Fut-Link Hardware</h2>
+      </div>
+      <div class="col-md-4 col-12 text-right">
+        <p class="my-md-4 header links">
+          <a href="#" class="px-2" style="font-size: 0.9em; text-decoration: none; color: #fff; ">Sign In</a>
+          <a href="#" class="px-1" style="font-size: 0.9em; text-decoration: none; color: #fff;">Create an Account</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</header>
+<!--/header -->
 
 
 
- 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="{% url 'store' %}">HardSoftware</a>
+<div class="container-fluid p-0"> 
+<nav class="navbar navbar-expand-lg navbar-dark bg-danger " style="font-family: sans-serif;">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -70,16 +97,31 @@ console.log("cart:",cart)
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href={% url 'store' %}>Store<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href={% url 'store' %}>HOME<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href={% url 'cart' %}>Cart<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href={% url 'store' %}>CATEGORIES<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href={% url 'cart' %}>CART<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href={% url 'store' %}>FEATURES<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href={% url 'store' %}>ABOUT US<span class="sr-only">(current)</span></a>
       </li>
       
       
-    </ul>
+    </ul></div>
       <div class="form-inline my-2 my-lg-0">
-           <a href="#"class="btn btn-warning">Login</a>
+        <!-- Search form -->
+<form class="form-inline ">
+  <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search"
+    aria-label="Search">
+  <i class="fas fa-search" aria-hidden="true" ></i>
+</form>
+        
            
            <a href="{% url 'cart' %}">
               <img  id="cart-icon" src="{% static 'images/cart.png' %}">
@@ -87,14 +129,10 @@ console.log("cart:",cart)
           <p id="cart-total">{{cartItems}}</p>
   
       </div>
-    </div>
+  
   </nav>
-      
-      
-      <hr>
-
-     <div class="container">
-            <br>
+</div>
+     <div class="container-fluid p-0 m-0">
             {% block content %}
 
 
@@ -102,7 +140,7 @@ console.log("cart:",cart)
      </div>
      <hr>
 <!-- start footer-->
-<div class='container-fluid'>
+<div class='container-fluid p-0'>
     <div class="card">
         <div class="heading text-center">
             <div class="head1">Just Scratching the Surface</div>
@@ -169,5 +207,9 @@ console.log("cart:",cart)
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <script src="{% static 'js/main.js' %}"></script>
+    <script type="text/javascript">jssor_1_slider_init();
+    </script>
 </body>
 </html>
